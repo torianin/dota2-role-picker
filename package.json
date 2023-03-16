@@ -10,5 +10,11 @@
   "dependencies": {
     "express": "^4.17.1",
     "ws": "^8.2.3"
-  }
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "repository": "https://github.com/torianin/dota2-role-picker.git",
+  "author": "Robert Ignasiak <tori@robert-i.com>",
+  "license": "MIT"
 }
