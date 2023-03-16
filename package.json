@@ -1,15 +1,13 @@
 {
   "name": "dota2-role-picker",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A Dota 2 role picker web application",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "ws": "^8.13.0"
+    "express": "^4.17.1",
+    "ws": "^8.2.3"
   }
 }
