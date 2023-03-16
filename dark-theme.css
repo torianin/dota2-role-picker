@@ -1,0 +1,40 @@
+body.dark-theme {
+  background-color: #1a1a1a;
+  color: #f8f9fa;
+}
+
+body.dark-theme table {
+  border-color: #6c757d;
+}
+
+body.dark-theme th {
+  background-color: #343a40;
+}
+
+body.dark-theme tr:nth-child(even) {
+  background-color: #343a40;
+}
+
+body.dark-theme tr:hover {
+  background-color: #495057;
+}
+
+body.dark-theme .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+body.dark-theme .btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+body.dark-theme .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+body.dark-theme .btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
