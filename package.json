@@ -4,6 +4,7 @@
   "description": "A Dota 2 role picker web application",
   "main": "server.js",
   "scripts": {
+    "build": "echo 'No build step'",
     "start": "node server.js"
   },
   "dependencies": {
