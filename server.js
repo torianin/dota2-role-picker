@@ -1,5 +1,12 @@
+const express = require('express');
+const http = require('http');
 const WebSocket = require('ws');
-const server = new WebSocket.Server({ port: 8080 });
+
+const app = express();
+const server = http.createServer(app);
+const wss = new WebSocket.Server({ server });
+
+app.use(express.static(__dirname));
 
 const rolePicks = new Map();
 
@@ -46,4 +53,9 @@ server.on('connection', (socket) => {
   socket.on('close', () => {
     console.log('Client disconnected');
   });
+});
+
+const port = process.env.PORT || 3000;
+server.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
 });

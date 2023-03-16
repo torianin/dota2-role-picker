@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const socket = new WebSocket('ws://localhost:8080');
+  const socket = new WebSocket(
+    (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host
+  );
   const resultElement = document.getElementById('result');
   const nicknameInput = document.getElementById('nickname');
   const tableBody = document.getElementById('roles-table-body');
