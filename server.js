@@ -10,7 +10,7 @@ app.use(express.static(__dirname));
 
 const rolePicks = new Map();
 
-server.on('connection', (socket) => {
+wss.on('connection', (socket) => {
   console.log('Client connected');
 
   socket.send(JSON.stringify({ type: 'initialRoles', roles: Array.from(rolePicks.values()) }));
@@ -25,7 +25,7 @@ server.on('connection', (socket) => {
       rolePicks.clear();
 
       // Broadcast the reset data message to all connected clients
-      server.clients.forEach((client) => {
+      wss.clients.forEach((client) => {
         if (client.readyState === WebSocket.OPEN) {
           client.send(JSON.stringify({ type: 'resetData' }));
         }
@@ -42,7 +42,7 @@ server.on('connection', (socket) => {
         rolePicks.set(data.nickname, { nickname: data.nickname, roles: [data.role] });
       }
 
-      server.clients.forEach((client) => {
+      wss.clients.forEach((client) => {
         if (client.readyState === WebSocket.OPEN) {
           client.send(JSON.stringify({ type: 'newRole', nickname: data.nickname, role: data.role }));
         }
@@ -56,6 +56,7 @@ server.on('connection', (socket) => {
 });
 
 const port = process.env.PORT || 3000;
+
 server.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
